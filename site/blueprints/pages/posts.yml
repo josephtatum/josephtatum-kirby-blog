@@ -1,0 +1,16 @@
+title: Posts
+
+sections:
+  drafts:
+    type: pages
+    template: post
+    status: draft
+    info: "{{ page.published.toDate("F j, Y") }}"
+  posts:
+    label: Published Posts
+    type: pages
+    template: post
+    query: page.children.sortBy('published', 'asc')
+    info: "{{ page.published.toDate("F j, Y") }}"
+    status: listed
+    limit: 10

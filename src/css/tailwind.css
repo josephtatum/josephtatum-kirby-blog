@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Sohne-Buch";
+  src: url("../../assets/fonts/test-soehne-buch.woff2");
+}
+
+@font-face {
+  font-family: "Sohne-Kraftig";
+  src: url("../../assets/fonts/test-soehne-kraftig.woff2");
+}
+
+@font-face {
+  font-family: "Sohne-Leicht";
+  src: url("../../assets/fonts/test-soehne-leicht.woff2");
+}

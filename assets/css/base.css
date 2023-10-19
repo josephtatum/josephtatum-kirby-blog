@@ -1,0 +1,31 @@
+@layer base {
+  html {
+    @apply bg-white text-black dark:text-white dark:bg-black;
+    font-size: 20px;
+  }
+
+  a {
+    @apply transition duration-300 ease-in-out hover:text-blue;
+  }
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+time {
+  font-weight: 300;
+}
+
+@media (prefers-color-scheme: dark) {
+  .light-mode-only {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .dark-mode-only {
+    display: none;
+  }
+}

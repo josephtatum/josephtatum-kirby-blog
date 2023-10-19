@@ -1,0 +1,43 @@
+.blog-post a {
+  text-decoration: underline;
+}
+.blog-post p {
+  margin-bottom: 1rem;
+  line-height: 1.6rem;
+}
+.blog-post figure,
+.blog-post .gatsby-resp-image-figure {
+  margin-bottom: 1.5rem;
+}
+.blog-post figure p {
+  margin: 0;
+}
+.blog-post hr {
+  margin: 50px 0;
+}
+.blog-post li {
+  padding-bottom: 1rem;
+}
+.blog-post li p {
+  display: initial;
+}
+.blog-post li:before {
+  content: "-";
+  color: #4a90e2;
+  padding-right: 8px;
+}
+.blog-post figcaption {
+  font-family: "Sohne-Leicht";
+  margin-top: 10px;
+  color: #aaaaaa;
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+.blog-post h2 {
+  font-size: 24px;
+}
+.blog-post h2,
+.blog-post h3 {
+  margin-bottom: 1rem;
+  font-family: "Sohne-Kraftig";
+}
