@@ -53,8 +53,5 @@ return [
               go($uid);
           }
       ],
-    ],
-    'panel' =>[
-      'install' => true
-    ],
+    ]
   ];
