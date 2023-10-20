@@ -40,6 +40,8 @@ columns:
         type: markdown
         font: sans-serif
         size: large
+        uploads:
+          template: post-media
         buttons:
           headlines:
             - h1
