@@ -10,6 +10,9 @@ return [
     'markdown' => [
       'extra' => true
     ],
+    'panel' =>[
+      'install' => true
+    ],
     'routes' => [
       [
         'pattern' => 'subscribe',
