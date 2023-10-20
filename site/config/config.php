@@ -10,9 +10,6 @@ return [
     'markdown' => [
       'extra' => true
     ],
-    'panel' =>[
-      'install' => true
-    ],
     'routes' => [
       [
         'pattern' => 'subscribe',
@@ -56,5 +53,8 @@ return [
               go($uid);
           }
       ],
-    ]
+    ],
+    'panel' =>[
+      'install' => true
+    ],
   ];
