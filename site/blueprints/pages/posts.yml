@@ -7,7 +7,7 @@ sections:
     status: draft
     info: "{{ page.published.toDate("F j, Y") }}"
   unlisted:
-     type: pages
+    type: pages
     template: post
     status: unlisted
     info: "{{ page.published.toDate("F j, Y") }}"
