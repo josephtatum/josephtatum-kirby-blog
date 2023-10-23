@@ -30,7 +30,7 @@
             class="bg-white dark:bg-black border-2 dark:border-white text-black dark:text-white p-3 rounded-sm mb-2 mLg:mb-0 mLg:rounded-r-none flex-1 mLg:border-r-0 sub-input"
         />
         <input type="hidden" name="honeypot" value="" />
-        <button id="submit" type="submit" class="bg-black dark:bg-white text-white dark:text-black p-3 rounded-sm mLg:rounded-l-none sub-button disabled:bg-slate">
+        <button id="submit" type="submit" class="bg-black dark:bg-white text-white dark:text-black p-3 rounded-sm mLg:rounded-l-none sub-button">
             Subscribe
         </button>
       </form>
