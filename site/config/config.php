@@ -44,13 +44,9 @@ return [
               $page = page($uid);
               if(!$page) $page = page('posts/' . $uid);
               if(!$page) $page = site()->errorPage();
+              if(!$page) $this->next();
+              
               return site()->visit($page);
-          }
-      ],
-      [
-          'pattern' => 'posts/(:any)',
-          'action'  => function($uid) {
-              go($uid);
           }
       ],
     ]
