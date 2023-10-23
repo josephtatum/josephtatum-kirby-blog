@@ -6,6 +6,11 @@ sections:
     template: post
     status: draft
     info: "{{ page.published.toDate("F j, Y") }}"
+  unlisted:
+     type: pages
+    template: post
+    status: unlisted
+    info: "{{ page.published.toDate("F j, Y") }}"
   posts:
     label: Published Posts
     type: pages
