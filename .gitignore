@@ -50,7 +50,7 @@ Icon
 /site/config/.license
 
 # Kirby itself
-/kirby
+# /kirby
 
 # Composer dependencies
 /vendor
