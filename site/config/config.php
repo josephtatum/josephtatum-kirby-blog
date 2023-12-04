@@ -12,6 +12,27 @@ return [
     ],
     'routes' => [
       [
+        'pattern' => "like/(:any)",
+        'method'  => 'POST',
+        'action'  => function($uid) {
+          $pageuid = $uid;
+          $kirby = kirby();
+          $liked = $kirby->impersonate('josephtatum+liker@gmail.com', function () use($pageuid) {
+            $post = page('page://' . $pageuid);
+            if($post) {
+              try {
+                $post->increment('likes');
+                return $post->likes()->toString();
+              } catch(Exception $e) {
+                return $e->getMessage();
+              }
+            }
+            return json_encode($post);
+          });
+          return $liked;
+        }
+      ],
+      [
         'pattern' => 'subscribe',
         'method' => 'POST',
         'action' => function () {

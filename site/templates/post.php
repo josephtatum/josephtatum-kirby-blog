@@ -30,6 +30,11 @@
   <?php endif ?>
   <?= $page->postcopy()->kirbytext() ?>
   <hr />
+
+  <!-- <button id="likeThisPost" data-uuid="<?= $page->uuid() ?>"  class="bg-black dark:bg-white text-white dark:text-black p-3 rounded-sm mLg:rounded-l-none sub-button">
+    Like this post
+  </button> -->
+
   <div class="flex flex-col sm:flex-row text-center text-sm mb-10 mr-4 ml-4 lg:mr-0 lg:ml-0" style="<?php echo ($page->prev($collection)) ? 'justify-content: space-between' : 'justify-content: flex-end'; ?>">
 
   <?php if($prev = $page->prev($collection)): ?>
@@ -45,4 +50,5 @@
     <?php endif ?>
   </div>
 </main>
+<script src="../../assets/js/like.js"></script>
 <?php snippet('footer') ?>

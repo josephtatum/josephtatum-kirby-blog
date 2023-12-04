@@ -10,7 +10,7 @@ sections:
     label: Published Posts
     type: pages
     template: post
-    query: page.children.sortBy('published', 'asc')
+    query: page.children.sortBy('published', 'desc')
     info: "{{ page.published.toDate("F j, Y") }}"
     status: listed
     limit: 10
