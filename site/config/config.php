@@ -6,7 +6,7 @@ use Ideneal\EmailOctopus\Entity\Contact;
 
 return [
     'home' => 'posts',
-    'debug' => env(APP_DEBUG),
+    'debug' => false,
     'markdown' => [
       'extra' => true
     ],
