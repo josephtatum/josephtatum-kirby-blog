@@ -20,8 +20,6 @@ function recaptcha_callback() {
     encode: true,
   }).done(function (res) {
     const data = JSON.parse(res);
-    console.log({ data });
-    $("#message").text(data);
     $("#message").css("display", "block");
     if (data.success) {
       $.ajax({
