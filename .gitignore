@@ -59,4 +59,4 @@ Icon
 /content
 
 #dotenv
-.env
+/.env
