@@ -20,6 +20,9 @@ function recaptcha_callback() {
     encode: true,
   }).done(function (res) {
     const data = JSON.parse(res);
+    console.log({ data });
+    $("#message").text(data);
+    $("#message").css("display", "block");
     if (data.success) {
       $.ajax({
         type: "POST",
@@ -41,6 +44,10 @@ function recaptcha_callback() {
           $("#message").css("display", "block");
         });
     } else {
+      $("form").css("display", "none");
+      $("#emailInput").val("");
+      $("#message").text(data);
+      $("#message").css("display", "block");
       throw new Error("You seem to be a bot. bad bot! go away!");
     }
   });
