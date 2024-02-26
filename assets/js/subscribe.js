@@ -46,9 +46,9 @@ function recaptcha_callback() {
     } else {
       $("form").css("display", "none");
       $("#emailInput").val("");
-      $("#message").text(data);
+      $("#message").text("Something's wrong. Let Joseph know if you can.");
       $("#message").css("display", "block");
-      //throw new Error("You seem to be a bot. bad bot! go away!");
+      throw new Error("Something's wrong. Let Joseph know if you can.");
     }
   });
 }
