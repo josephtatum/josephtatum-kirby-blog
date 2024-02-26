@@ -7,20 +7,37 @@ use Ideneal\EmailOctopus\Entity\Contact;
 return [
     'home' => 'posts',
     'debug' => false,
-    'panel' =>[
-      'install' => true
-    ],
     'markdown' => [
       'extra' => true
     ],
     'routes' => [
+      [
+        'pattern' => 'verify-recaptcha',
+        'method' => 'POST',
+        'action' => function () {
+          $ch = curl_init();
+          $secret = env('RECAPTCHA_SECRET');
+          
+          curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+          curl_setopt($ch, CURLOPT_POST, 1);
+          curl_setopt($ch, CURLOPT_POSTFIELDS,
+            "secret={$secret}&response={$_POST['captchaResponse']}");
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+          $server_response = curl_exec($ch);
+
+          curl_close($ch);
+
+          return json_encode($server_response);
+        }
+      ],
       [
         'pattern' => "like/(:any)",
         'method'  => 'POST',
         'action'  => function($uid) {
           $pageuid = $uid;
           $kirby = kirby();
-          $liked = $kirby->impersonate('josephtatum+liker@gmail.com', function () use($pageuid) {
+          $liked = $kirby->impersonate(env('LIKE_ACCOUNT_EMAIL'), function () use($pageuid) {
             $post = page('page://' . $pageuid);
             if($post) {
               try {
@@ -40,9 +57,9 @@ return [
         'method' => 'POST',
         'action' => function () {
         
-          $emailOctopus = new EmailOctopus('805e74be-e5d7-4c63-a560-773afbb16076');
+          $emailOctopus = new EmailOctopus(env('EMAIL_OCTOPUS_ID'));
 
-          $list = $emailOctopus->getMailingList('d5e18337-b947-11ec-9258-0241b9615763');
+          $list = $emailOctopus->getMailingList(env('EMAIL_OCTOPUS_LIST_ID'));
 
           $contact = new Contact();
           $contact
