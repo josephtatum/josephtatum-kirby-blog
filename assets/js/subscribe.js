@@ -48,7 +48,7 @@ function recaptcha_callback() {
       $("#emailInput").val("");
       $("#message").text(data);
       $("#message").css("display", "block");
-      throw new Error("You seem to be a bot. bad bot! go away!");
+      //throw new Error("You seem to be a bot. bad bot! go away!");
     }
   });
 }
